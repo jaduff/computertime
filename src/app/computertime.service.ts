@@ -14,18 +14,18 @@ export class ComputertimeService {
         {title: "Tidy livingroom", description: "Is the living room tidy?"},
         {title: "Happy Mummy", description: "Have you helped make Mummy happy today?"}]
 
-    jobArray = new Array;
+    @Input() jobArray = [];
 
     constructor(){
-        for (var i=0; i>=this.jobDict.length;i++)
-        {
+        for (var i=0; i<this.jobDict.length;i++)
+        {console.log("pushing array " + i);
             this.jobArray.push(new Job(i, this.jobDict[i].title, this.jobDict[i].description));
         }
     }
 
     getCompleted(){
         var completedArray = [];
-        for ( var i=0; i>=this.jobArray.length;i++ )
+        for ( var i=0; i<this.jobArray.length;i++ )
         {
             if (this.jobArray[i].completed == true){
                 completedArray.push(this.jobArray[i]);

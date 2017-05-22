@@ -11,17 +11,13 @@ export class ComputertimeComponent {
     
     @Input() currentJob = this.computertimeservice.jobArray[0];
 
-    onClick($event){
-        var _event = $event;
-        ()=>{
-                    console.log("here");
-            if (_event.target.value == "yes")
-            {
-                this.currentJob.complete();
-                console.log("yes");
-            }
-            this.currentJob = this.computertimeservice.jobArray[this.currentJob.id+1];
+onClick($event){
+    var _event = $event;
+    console.log(this.computertimeservice);
+        if (_event.target.value == "yes")
+        {
+            this.currentJob.complete();
         }
-        //console.log("after");
+        this.currentJob = this.computertimeservice.jobArray[this.currentJob.id+1];
     }
 }
